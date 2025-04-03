@@ -1,26 +1,7 @@
 body {
 background-color: #3e2522;
 }
-.logo {
-    width: 90vw; /* Логотип займає 90% ширини вікна */
-    display: block;
-    margin: 20px auto;
-    height: auto;
-    max-width: 600px; /* Максимальна ширина 600 пікселів */
-}
 
-@media (max-width: 768px) {
-    .logo {
-        width: 100vw; /* Логотип займає всю ширину екрана на маленьких екранах */
-        margin: 10px auto; /* Зменшуємо відступи на маленьких екранах */
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        width: 95vw; /* Трохи зменшуємо ширину для дуже маленьких екранів */
-    }
-}
 header {
     font-family: "cursive", cursive; /* Шрифт */
     font-size: 24px; /* Розмір тексту */
