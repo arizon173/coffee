@@ -1,0 +1,600 @@
+body {
+background-color: #3e2522;
+}
+.logo {
+    width: 90vw; /* Логотип займає 90% ширини вікна */
+    display: block;
+    margin: 20px auto;
+    height: auto;
+    max-width: 600px; /* Максимальна ширина 600 пікселів */
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 100vw; /* Логотип займає всю ширину екрана на маленьких екранах */
+        margin: 10px auto; /* Зменшуємо відступи на маленьких екранах */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 95vw; /* Трохи зменшуємо ширину для дуже маленьких екранів */
+    }
+}
+header {
+    font-family: "cursive", cursive; /* Шрифт */
+    font-size: 24px; /* Розмір тексту */
+    font-weight: bold; /* Товщина шрифту */
+    color: rgb(0, 0, 0); /* Колір тексту */
+    text-transform: uppercase; /* Перетворення на великі літери */
+    text-align: center; /* Вирівнювання тексту */
+    text-shadow: 2px 2px 50px black; /* Тінь тексту */
+}
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #fc6969;
+}
+
+.menu-container {
+    display: none; /* Приховуємо контейнер на великих екранах */
+}
+
+.menu-toggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 10px; /* Відступ між кнопкою та текстом */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 50px 20px 10px 20px;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .menu-container {
+        display: flex; /* Показуємо контейнер на маленьких екранах */
+        align-items: center; /* Вирівнюємо елементи по вертикалі */
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
+.card {
+    width: 250px;
+    height: 325px;
+    background: #ddb892;
+    border-radius: 20px;
+    box-shadow: -8px 8px 0px 5px rgb(50, 50, 50, 0.2);
+    border: solid 2px rgb(0, 0, 0);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transform: rotate(3deg) skewX(3deg);
+}
+
+#cardtop {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease;
+    color: #000000;
+}
+
+#cardtop p {
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 2px;
+}
+
+#cardbottom {
+    width: 100%;
+    height: 31%;
+    border-end-start-radius: 20px;
+    border-end-end-radius: 20px;
+    background-color: #550b14;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+#cardbottom hr {
+    height: 3px;
+    background-color: black;
+}
+
+#cardbottomtitle {
+    margin-bottom: 10px;
+}
+
+#cardbottomprice {
+    display: flex;
+    justify-content: start;
+    margin-top: 10px;
+    border-top: 3px solid lightgrey;
+}
+
+#cardnewfilter {
+    width: 75px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #fc6969;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-weight: 500;
+}
+
+.card:hover {
+    transform: translateY(-5%);
+    box-shadow: 0px 20px 10px rgb(50, 50, 50, 0.2);
+}
+.card:hover #cardbrightfilter {
+    transform: rotate(-42deg) translateX(-15%) translateY(-79%);
+}
+
+.card:active #cardtop {
+    transform: scale(1.05);
+}
+
+.card:active #cardbottom {
+    background-color: #fc6969;
+}
+
+.card:active #cardbottom {
+    color: white;
+}
+
+.card:active #cardbottom hr {
+    background-color: white;
+}
+.card-img {
+    width: 100%;  /* Щоб займало всю ширину блоку */
+    height: auto; /* Автоматична висота для збереження пропорцій */
+    object-fit: cover; /* Обрізає, щоб заповнити контейнер */
+    border-radius: 10px; /* Закруглені кути (за бажанням) */
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Центрує по горизонталі */
+    margin-top: 30px;
+    min-height: 60vh;
+    padding: 20px;
+}
+
+.card {
+    box-sizing: border-box;
+}
+
+.card1 {
+    width: 90%;
+    max-width: 800px; /* Збільшуємо максимальну ширину, щоб було місце для зображення */
+    height: auto;
+    border-radius: 30px;
+    background: #9c6644;
+    box-shadow: 10px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(0, 0, 0);
+    padding: 30px;
+    color: white;
+    font-family: sans-serif;
+    margin: 20px auto;
+    display: flex; /* Використовуємо flexbox */
+    align-items: center; /* Вирівнюємо елементи по вертикалі */
+}
+
+.card-text {
+    flex: 1; /* Текст займає більшу частину простору */
+    text-align: center;
+}
+
+.card1 h1 {
+    font-size: 2em;
+    font-family: "cursive", cursive;
+    margin-bottom: 1em;
+}
+
+.card1 h2 {
+    font-size: 1.2em;
+}
+
+.card-image {
+    width: 40%; /* Зображення займає 40% ширини картки */
+    height: auto;
+    border-radius: 20px;
+    margin-left: 20px; /* Додаємо відступ між текстом та зображенням */
+}
+
+@media (max-width: 768px) {
+    .card1 {
+        flex-direction: column; /* Розміщуємо текст та зображення у стовпець на маленьких екранах */
+    }
+
+    .card-text {
+        width: 100%; /* Текст займає всю ширину на маленьких екранах */
+        margin-bottom: 20px; /* Додаємо відступ між текстом та зображенням */
+    }
+
+    .card-image {
+        width: 100%; /* Зображення займає всю ширину на маленьких екранах */
+        margin-left: 0; /* Прибираємо відступ */
+    }
+}
+
+h1 {
+    text-align: center; /* Центруємо текст */
+    font-size: 2.5em; /* Задаємо розмір шрифту */
+    font-weight: bold; /* Задаємо жирність шрифту */
+    color: #000000; /* Задаємо колір тексту */
+    margin-bottom: 30px; /* Задаємо відступ знизу */
+    text-transform: uppercase; /* Перетворюємо текст на верхній регістр */
+    letter-spacing: 2px; /* Задаємо інтервал між літерами */
+    font-family: sans-serif; /* Задаємо шрифт */
+}
+
+/* Додаткові стилі для маленьких екранів */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Зменшуємо розмір шрифту на маленьких екранах */
+        margin-bottom: 20px; /* Зменшуємо відступ знизу */
+    }
+}
+
+
+
+.product-cards-container {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.product-cards-container.active {
+    display: flex;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: rgb(15, 15, 15);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.1); /* Чорна зовнішня, біла внутрішня */
+    color: white;
+    transition: 1s;
+    padding: 20px;
+}
+
+.product-image-container {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 0.9em;
+    color: #fc6969;
+}
+
+.product-description {
+    font-size: 0.9em;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.product-card:hover .product-description {
+    opacity: 0.7;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7), inset 0 0 40px rgba(255, 255, 255, 0.2); /* Чорна зовнішня, біла внутрішня при наведенні */
+}
+
+@keyframes rot {
+    0%, 100% {
+        transform: rotateX(-15deg) translateY(0);
+    }
+    50% {
+        transform: rotateX(-15deg) translateY(-10px);
+    }
+}
+
+.product-card {
+    animation: rot 2s infinite ease;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center; /* Вирівнювання кнопок по центру */
+    flex-wrap: wrap; /* Дозволяє перенесення кнопок на новий рядок */
+}
+
+.category-buttons .category-button {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #728156;
+    text-shadow: none;
+    background: #000000;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #98a77c;
+    transition: 0.5s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 5px; /* Додаємо відступи між кнопками */
+}
+
+.category-buttons .category-button:hover,
+.category-buttons .category-button.active {
+    color: #000000;
+    background: #98a77c;
+    border: 1px solid #98a77c;
+    text-shadow: 0 0 5px #e7f5dc, 0 0 10px #e7f5dc, 0 0 20px #e7f5dc;
+    box-shadow: 0 0 5px #98a77c, 0 0 20px #98a77c, 0 0 50px #98a77c,
+        0 0 100px #98a77c;
+}
+
+/* Для екранів менше 768px (наприклад, телефони) */
+@media (max-width: 768px) {
+    .category-buttons {
+        flex-direction: column; /* Розташовуємо кнопки в стовпчик */
+        align-items: center; /* Вирівнюємо кнопки по центру */
+    }
+
+    .category-buttons .category-button {
+        width: 100%; /* Розтягуємо кнопки на всю ширину екрана */
+        margin: 5px 0; /* Додаємо відступи між кнопками */
+    }
+}
+
+
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-us h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.social-media {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-media p {
+    font-weight: bold;
+}
+
+
+.contact-card {
+    width: 400px; /* Збільшена ширина */
+    padding: 20px;
+    background: #fff;
+    border: 6px solid #000;
+    box-shadow: 12px 12px 0 #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 50px auto;
+}
+
+.contact-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 17px 17px 0 #000;
+}
+
+.contact-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 3px;
+    background-color: #000;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.contact-card:hover .contact-title::after {
+    transform: translateX(0);
+}
+
+.contact-info {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: 3px solid #000;
+    font-size: 16px;
+    font-family: inherit;
+    transition: transform 0.3s;
+    width: calc(100% - 26px);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    transform: scale(1.05);
+    background-color: #000;
+    color: #ffffff;
+}
+
+.contact-button {
+    border: 3px solid #000;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 50%;
+    height: 100%;
+    margin-left: 25%;
+}
+
+.contact-button::before {
+    content: "Sure?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-color: #5ad641;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.contact-button:hover::before {
+    transform: translateY(0);
+}
+
+.contact-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(2px, 2px);
+    }
+    25% {
+        transform: translate(-2px, -2px);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+    }
+    75% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(2px, 2px);
+    }
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}

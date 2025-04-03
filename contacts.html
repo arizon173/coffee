@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lviv Croissants</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-container">
+                <button class="menu-toggle">☰</button>
+                <span class="menu-text">Lviv Croissants</span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+            <script src="script.js"></script>
+        </nav>
+    </header>
+    <img src="logo.svg" alt="Логотип" class="logo">
+    <div class="contact-card">
+        <h2 class="contact-title">НАШІ КОНТАКТИ</h2>
+        <div class="contact-info">
+            <p>Адреса: м. Львів, вул. Рудненська, 16/1</p>
+            <p>Телефон: <a href="tel:0800750403">080000000</a></p>
+            <p>E-mail: <a href="mailto:info@lvivcroissants.com">info@lvivcroissants.com</a></p>
+        </div>
+    
+        <h3 class="contact-title">ВИНИКЛИ ЗАПИТАННЯ?</h3>
+    
+        <form class="contact-form" action="/submit-form" method="post">
+            <input type="text" id="name" name="name" placeholder="Ім'я" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <textarea id="message" name="message" placeholder="Повідомлення" rows="4" required></textarea>
+            <button type="submit" class="contact-button">Надіслати</button>
+        </form>
+    </div>
+    
+    </body>
+    </html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lviv Croissants</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-container">
+                <button class="menu-toggle">☰</button>
+                <span class="menu-text">Lviv Croissants</span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img src="logo.svg" alt="Логотип" class="logo">
+    <h1>НАШЕ МЕНЮ
+        НАСОЛОДЖУЙСЯ НАЙКРАЩИМ
+    </h1>
+    
+    <div class="category-buttons">
+        <button class="category-button active" data-category="croissant-sandwiches">Круасан Сендвічі</button>
+        <button class="category-button" data-category="sweet-croissants">Солодкі круасани</button>
+        <button class="category-button" data-category="drinks">Напої</button>
+    </div>
+    
+    <div class="product-cards-container active" id="croissant-sandwiches">
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="yalovychyna-gryl-croissant.webp" alt="З яловичиною гриль" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">З яловичиною гриль<span class="product-price"> 155 грн</span></h2>
+                <p class="product-description">круасан, яловичина гриль, салат Айсберг, помідор, маринована цибуля, соус Сацебелі, соус Класичний<br>235 г | 453 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="chizburger-novyj.webp" alt="Чізбургер" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Чізбургер<span class="product-price"> 135 грн</span></h2>
+                <p class="product-description">круасан, яловича котлета, сир тостовий, салат Айсберг, помідор, квашений огірок, цибуля сушена, соус Гострий / соус Бургерний<br>240 г | 320 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="chiz-1.webp" alt="Дабл Чізбургер" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Дабл Чізбургер<span class="product-price"> 175 грн</span></h2>
+                <p class="product-description">круасан, яловича котлета, сир тостовий, салат Айсберг, помідор, квашений огірок, цибуля сушена, соус Гострий / соус Бургерний<br>325 г | 303 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="kurka-teryyaki-na-sajt-v-osnovne-menyu-1.webp" alt="Курка Теріякі" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Курка Теріякі<span class="product-price"> 129 грн</span></h2>
+                <p class="product-description">круасан, курка, салат, огірок, імбир маринований, кунжут, соус Теріякі<br>212 г | 299 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="galytskyj (1).webp" alt="Галицький" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Галицький<span class="product-price"> 99 грн</span></h2>
+                <p class="product-description">круасан, огірок, помідор, курка, гриби, салат, соус "Цезар"<br>215 г | 295 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="z-tuentsem.webp" alt="З тунцем" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">З тунцем<span class="product-price"> 119 грн</span></h2>
+                <p class="product-description">круасан, зелена цибуля, тунець, яєчня, лимон, помідор, салат, соус Класичний</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="tsezar-z-kurkoyu.webp" alt="Цезар з куркою" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Цезар з куркою<span class="product-price"> 125 грн</span></h2>
+                <p class="product-description">круасан, курка, помідор, сир Пармезан, салат Айсберг, соус Цезар<br>206 г | 289 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="lvivskyj.webp" alt="Львівський" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Львівський<span class="product-price"> 99 грн</span></h2>
+                <p class="product-description">круасан, огірок, помідор, салямі, сир тостовий, яєчня, салат, соус Часниковий<br>228 г | 333 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="selyanskyj-2.webp" alt="Селянський" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Селянський<span class="product-price"> 109 грн</span></h2>
+                <p class="product-description">круасан, квашений огірок, балик, маринована цибуля, салат, соус Часниковий<br>190 г | 367 ккал / 100 г</p>
+            </div>
+        </article>
+    </div>
+    
+    <div class="product-cards-container" id="sweet-croissants">
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="mygdalevyj.webp" alt="З мигдалевим кремом" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">З мигдалевим кремом<span class="product-price"> 99 грн</span></h2>
+                <p class="product-description">круасан, крем Мигдалевий, мигдалеві пластівці, цукрова пудра<br>165 г | 393 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="z-shokoladom-ananom.webp" alt="З шоколадом та бананом" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">З шоколадом та бананом<span class="product-price"> 95 грн</span></h2>
+                <p class="product-description">круасан, шоколад, банан, цукрова пудра<br>166 г | 370 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="malynova-nasoloda.webp" alt="Малинова насолода" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Малинова насолода<span class="product-price"> 95 грн</span></h2>
+                <p class="product-description">круасан, крем Йогуртовий, джем Малина, м'ята, цукрова пудра<br>186 г | 353 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="ostannya-pyana-vyshnya-na-dodatok.webp" alt="П'яна вишня" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">П'яна вишня<span class="product-price"> 99 грн</span></h2>
+                <p class="product-description">круасан, конфітюр "П'яна вишня", крем Маскарпоне, какао, цукрова пудра<br>172 г | 384 ккал / 100 г</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="lc_fistashka_na-sajt_840h450_print-1.webp" alt="Фісташковий" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Фісташковий<span class="product-price"> 115 грн</span></h2>
+                <p class="product-description">круасан, фісташковий крем, фісташка, цукрова пудра<br>165 г | 461,57 ккал / 100 г</p>
+            </div>
+        </article>
+    </div>
+    
+    
+    <div class="product-cards-container" id="drinks">
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="kapuchyno-serednye.png" alt="Капучино" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Капучино<span class="product-price"> L - 40 грн | XL - 53 грн | XXL - 60 грн</span></h2>
+                <p class="product-description">Еспресо, молоко, молочна пінка<br>Різні розміри</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="kapuchyno-serednye.png" alt="Капучино холодний" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Капучино холодний<span class="product-price"> L - 40 грн | XL - 53 грн | XXL - 60 грн</span></h2>
+                <p class="product-description">Еспресо, молоко, лід<br>Різні розміри</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="Late-serednye.png" alt="Лате" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Лате<span class="product-price"> L - 40 грн | XL - 53 грн | XXL - 60 грн</span></h2>
+                <p class="product-description">Еспресо, молоко, молочна пінка<br>Різні розміри</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="Late-serednye.png" alt="Лате холодний" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Лате холодний<span class="product-price"> L - 40 грн | XL - 53 грн | XXL - 60 грн</span></h2>
+                <p class="product-description">Еспресо, молоко, лід<br>Різні розміри</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="ekspresso-1.png" alt="Американо" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Американо<span class="product-price"> 45 грн</span></h2>
+                <p class="product-description">Амерекано, гаряча вода<br>200 мл</p>
+            </div>
+        </article>
+        <article class="product-card">
+            <div class="product-image-container">
+                <img src="ekspresso-1.png" alt="Еспресо" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Еспресо<span class="product-price"> 28 грн</span></h2>
+                <p class="product-description">30 мл</p>
+            </div>
+        </article>
+    </div>
+    
+    <div class="product-cards-container" id="additions">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
