@@ -2,23 +2,33 @@ body {
 background-color: #3e2522;
 }
 .logo {
-    width: 90vw; /* Логотип займає 90% ширини вікна */
-    display: block;
-    margin: 20px auto;
-    height: auto;
-    max-width: 600px; /* Максимальна ширина 600 пікселів */
+    display: flex; /* Використовуємо flexbox для центрування */
+    justify-content: center; /* Центрування по горизонталі */
+    width: 100%; /* Займає всю доступну ширину контейнера */
+    max-width: 600px; /* Максимальна ширина логотипа */
+    height: auto; /* Автоматична висота */
+    margin: 15px auto; /* Центрування контейнера логотипа та вертикальні відступи */
+    box-sizing: border-box;
+    padding: 0 20px; /* Забезпечуємо невеликі бокові відступи */
+}
+
+.logo img {
+    display: block; /* Усуваємо зайві відступи навколо зображення */
+    max-width: 100%; /* Зображення не перевищує ширину контейнера .logo */
+    height: auto; /* Зберігаємо пропорції зображення */
 }
 
 @media (max-width: 768px) {
     .logo {
-        width: 100vw; /* Логотип займає всю ширину екрана на маленьких екранах */
-        margin: 10px auto; /* Зменшуємо відступи на маленьких екранах */
+        margin: 10px auto; /* Зменшуємо вертикальні відступи */
+        padding: 0 15px;
     }
 }
 
 @media (max-width: 480px) {
     .logo {
-        width: 95vw; /* Трохи зменшуємо ширину для дуже маленьких екранів */
+        margin: 5px auto; /* Ще менші вертикальні відступи */
+        padding: 0 10px;
     }
 }
 header {
@@ -28,13 +38,18 @@ header {
     color: rgb(0, 0, 0); /* Колір тексту */
     text-transform: uppercase; /* Перетворення на великі літери */
     text-align: center; /* Вирівнювання тексту */
-    text-shadow: 2px 2px 50px black; /* Тінь тексту */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Менш інтенсивна тінь */
+    padding: 15px 0; /* Додаємо вертикальні відступи */
+    box-sizing: border-box; /* Враховуємо padding у розмірах */
 }
+
 .navbar {
-    background-color: #333;
+    background-color: #333; /* Фон для великих екранів (за замовчуванням) */
     padding: 10px 20px;
     text-align: center;
     position: relative;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .nav-list {
@@ -43,6 +58,7 @@ header {
     margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .nav-list li {
@@ -55,44 +71,112 @@ header {
     font-size: 18px;
     font-weight: 500;
     transition: color 0.3s ease;
+    display: block;
+    padding: 8px 10px;
 }
 
 .nav-list a:hover {
     color: #fc6969;
 }
 
+/* Стилі для малих екранів */
+@media (max-width: 768px) {
+    header {
+        font-size: 20px;
+        padding: 10px 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    .navbar {
+        background-color: transparent; /* Прибираємо фон на малих екранах */
+        padding: 10px;
+        position: static; /* Повертаємо до статичного позиціонування */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .nav-list a {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #333; /* Змінюємо колір тексту для кращої видимості на прозорому фоні */
+    }
+
+    .nav-list a:hover {
+        background-color: #eee; /* Додаємо легкий фон при наведенні */
+        color: #000000;
+    }
+}
+
+/* Стилі для великих екранів (повертаємо фон, якщо потрібно) */
+@media (min-width: 769px) {
+    .navbar {
+        background-color: #333; /* Переконайтеся, що фон є на великих екранах */
+    }
+}
+
+/* Додаткові оптимізації */
+body {
+    overflow-x: hidden;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .menu-container {
     display: none; /* Приховуємо контейнер на великих екранах */
+    position: fixed; /* Зафіксоване положення для прокрутки */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px; /* Додаємо відступи зверху та з боків */
+    background-color: rgba(0, 0, 0, 0.8); /* Напівпрозорий фон */
+    z-index: 1000; /* Забезпечує відображення поверх інших елементів */
+    box-sizing: border-box; /* Враховуємо padding та border у ширині */
+    align-items: center;
+    justify-content: space-between; /* Розміщуємо кнопку та текст по краях */
 }
 
 .menu-toggle {
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 28px; /* Збільшений розмір іконки */
     cursor: pointer;
+    padding: 5px; /* Додаємо трохи padding для зручності натискання */
 }
 
 .menu-text {
     color: white;
-    font-size: 18px;
+    font-size: 20px; /* Трохи більший розмір тексту */
     font-weight: 500;
-    margin-left: 10px; /* Відступ між кнопкою та текстом */
+    /* margin-left: 10px; Видалено, використовуємо space-between */
 }
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 50px 20px 10px 20px;
+        padding: 70px 20px 10px 20px; /* Збільшено верхній padding для звільнення місця під фіксованим меню */
     }
 
     .nav-list {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
+        position: fixed; /* Зафіксоване положення для меню, що випадає */
+        top: 60px; /* Розміщуємо під header-ом */
         left: 0;
         width: 100%;
         background-color: #333;
+        z-index: 999; /* Розміщуємо під menu-container */
     }
 
     .nav-list.show {
@@ -100,15 +184,20 @@ header {
     }
 
     .nav-list li {
-        margin: 10px 0;
+        margin: 15px 0; /* Збільшено вертикальні відступи */
+        text-align: center; /* Центрування елементів меню */
+    }
+
+    .nav-list li a { /* Стилізація посилань (якщо є) */
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
     }
 
     .menu-container {
         display: flex; /* Показуємо контейнер на маленьких екранах */
-        align-items: center; /* Вирівнюємо елементи по вертикалі */
-        position: absolute;
-        top: 10px;
-        left: 10px;
     }
 }
 .card {
@@ -231,77 +320,83 @@ header {
 }
 
 .card1 {
-    width: 90%;
-    max-width: 800px; /* Збільшуємо максимальну ширину, щоб було місце для зображення */
-    height: auto;
-    border-radius: 30px;
-    background: #9c6644;
-    box-shadow: 10px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(0, 0, 0);
-    padding: 30px;
-    color: white;
-    font-family: sans-serif;
-    margin: 20px auto;
-    display: flex; /* Використовуємо flexbox */
-    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    display: flex; /* Використовуємо flexbox для гнучкого розташування елементів */
+    flex-direction: row; /* Розташовуємо елементи в ряд (текст ліворуч, зображення праворуч за замовчуванням) */
+    align-items: center; /* Вирівнюємо елементи по вертикалі по центру */
+    justify-content: space-between; /* Розміщуємо текст та зображення на протилежних краях, залишаючи між ними простір */
+    padding: 20px;
+    margin: 20px auto; /* Центруємо картку по горизонталі та додаємо вертикальні відступи */
+    max-width: 960px; /* Максимальна ширина картки на великих екранах */
+    background-color: #f9f9f9; /* Легкий фоновий колір для виділення */
+    border-radius: 8px; /* Заокруглені кути */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    box-sizing: border-box; /* Враховуємо padding та border у ширині */
 }
 
 .card-text {
-    flex: 1; /* Текст займає більшу частину простору */
-    text-align: center;
+    flex: 1; /* Займає доступний простір, дозволяючи тексту розширюватися */
+    padding-right: 20px; /* Відступ справа від тексту до зображення */
 }
 
-.card1 h1 {
-    font-size: 2em;
-    font-family: "cursive", cursive;
-    margin-bottom: 1em;
+.card-text h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.card1 h2 {
+.card-text h2 {
     font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 0;
 }
 
 .card-image {
-    width: 40%; /* Зображення займає 40% ширини картки */
-    height: auto;
-    border-radius: 20px;
-    margin-left: 20px; /* Додаємо відступ між текстом та зображенням */
+    width: 40%; /* Займає 40% ширини контейнера */
+    max-width: 300px; /* Максимальна ширина зображення */
+    height: auto; /* Зберігаємо пропорції */
+    border-radius: 4px;
+    display: block; /* Усуваємо зайві відступи під зображенням */
 }
 
+/* Адаптивність для менших екранів */
 @media (max-width: 768px) {
     .card1 {
-        flex-direction: column; /* Розміщуємо текст та зображення у стовпець на маленьких екранах */
+        flex-direction: column; /* Переводимо елементи у вертикальний стовпець */
+        text-align: center; /* Центруємо текст */
+        padding: 15px;
     }
 
     .card-text {
-        width: 100%; /* Текст займає всю ширину на маленьких екранах */
-        margin-bottom: 20px; /* Додаємо відступ між текстом та зображенням */
+        padding-right: 0; /* Забираємо відступ справа */
+        margin-bottom: 20px; /* Додаємо відступ знизу від тексту до зображення */
+    }
+
+    .card-text h1 {
+        font-size: 2em;
     }
 
     .card-image {
-        width: 100%; /* Зображення займає всю ширину на маленьких екранах */
-        margin-left: 0; /* Прибираємо відступ */
+        width: 80%; /* Збільшуємо ширину зображення */
+        max-width: 400px;
     }
 }
 
-h1 {
-    text-align: center; /* Центруємо текст */
-    font-size: 2.5em; /* Задаємо розмір шрифту */
-    font-weight: bold; /* Задаємо жирність шрифту */
-    color: #000000; /* Задаємо колір тексту */
-    margin-bottom: 30px; /* Задаємо відступ знизу */
-    text-transform: uppercase; /* Перетворюємо текст на верхній регістр */
-    letter-spacing: 2px; /* Задаємо інтервал між літерами */
-    font-family: sans-serif; /* Задаємо шрифт */
-}
+/* Додаткові оптимізації для ще менших екранів */
+@media (max-width: 480px) {
+    .card-text h1 {
+        font-size: 1.7em;
+    }
 
-/* Додаткові стилі для маленьких екранів */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em; /* Зменшуємо розмір шрифту на маленьких екранах */
-        margin-bottom: 20px; /* Зменшуємо відступ знизу */
+    .card-text h2 {
+        font-size: 1em;
+    }
+
+    .card-image {
+        width: 95%;
     }
 }
-
 
 
 .product-cards-container {
@@ -396,12 +491,12 @@ h1 {
     border-radius: 8px;
     font-size: 17px;
     font-weight: 500;
-    color: #728156;
+    color: #a78d78;
     text-shadow: none;
     background: #000000;
     cursor: pointer;
     box-shadow: transparent;
-    border: 1px solid #98a77c;
+    border: 1px solid #000000;
     transition: 0.5s ease;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -413,11 +508,11 @@ h1 {
 .category-buttons .category-button:hover,
 .category-buttons .category-button.active {
     color: #000000;
-    background: #98a77c;
-    border: 1px solid #98a77c;
-    text-shadow: 0 0 5px #e7f5dc, 0 0 10px #e7f5dc, 0 0 20px #e7f5dc;
-    box-shadow: 0 0 5px #98a77c, 0 0 20px #98a77c, 0 0 50px #98a77c,
-        0 0 100px #98a77c;
+    background: #ffffff;
+    border: 1px solid #cbc7a6;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #b1b2ab, 0 0 20px #fffed6;
+    box-shadow: 0 0 5px #ddddd9, 0 0 20px #aaaca5, 0 0 50px #e0e1dd,
+        0 0 100px #9f9f9f;
 }
 
 /* Для екранів менше 768px (наприклад, телефони) */
@@ -466,13 +561,14 @@ body {
 
 
 .contact-card {
-    width: 400px; /* Збільшена ширина */
+    width: 90%; /* Адаптивна ширина */
+    max-width: 400px; /* Максимальна ширина на більших екранах */
     padding: 20px;
     background: #fff;
     border: 6px solid #000;
     box-shadow: 12px 12px 0 #000;
     transition: transform 0.3s, box-shadow 0.3s;
-    margin: 50px auto;
+    margin: 30px auto; /* Зменшено верхній та нижній відступ для менших екранів */
 }
 
 .contact-card:hover {
@@ -481,7 +577,7 @@ body {
 }
 
 .contact-title {
-    font-size: 32px;
+    font-size: 28px; /* Трохи менший розмір шрифту для менших екранів */
     font-weight: 900;
     color: #000;
     text-transform: uppercase;
@@ -517,7 +613,7 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px; /* Менший відступ між елементами форми */
 }
 
 .contact-form input, .contact-form textarea {
@@ -531,7 +627,7 @@ body {
 
 .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
-    transform: scale(1.05);
+    transform: scale(1.02); /* Менший масштаб при фокусі */
     background-color: #000;
     color: #ffffff;
 }
@@ -548,9 +644,10 @@ body {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s;
-    width: 50%;
-    height: 100%;
-    margin-left: 25%;
+    width: 70%; /* Збільшена ширина кнопки на менших екранах */
+    height: auto; /* Автоматична висота */
+    margin-left: auto;
+    margin-right: auto; /* Центрування кнопки */
 }
 
 .contact-button::before {
@@ -559,7 +656,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 105%;
+    height: 100%; /* Виправлено висоту для коректного відображення */
     background-color: #5ad641;
     color: #000;
     display: flex;
@@ -574,27 +671,71 @@ body {
 }
 
 .contact-button:active {
-    transform: scale(0.95);
+    transform: scale(0.98); /* Менший масштаб при активному стані */
 }
 
 @keyframes glitch {
     0% {
-        transform: translate(2px, 2px);
+        transform: translate(1px, 1px); /* Менші зсуви для менших екранів */
     }
     25% {
-        transform: translate(-2px, -2px);
+        transform: translate(-1px, -1px);
     }
     50% {
-        transform: translate(-2px, 2px);
+        transform: translate(-1px, 1px);
     }
     75% {
-        transform: translate(2px, -2px);
+        transform: translate(1px, -1px);
     }
     100% {
-        transform: translate(2px, 2px);
+        transform: translate(1px, 1px);
     }
 }
 
 .glitch {
     animation: glitch 0.3s infinite;
+}
+
+/* Медіа-запит для більших екранів (наприклад, десктопів) */
+@media (min-width: 768px) {
+    .contact-card {
+        width: 400px; /* Повертаємо фіксовану ширину для десктопів */
+        margin: 50px auto;
+    }
+
+    .contact-title {
+        font-size: 32px; /* Повертаємо більший розмір шрифту */
+    }
+
+    .contact-form {
+        gap: 15px; /* Повертаємо більший відступ */
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+        transform: scale(1.05); /* Повертаємо більший масштаб при фокусі */
+    }
+
+    .contact-button {
+        width: 50%; /* Повертаємо початкову ширину */
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    @keyframes glitch {
+        0% {
+            transform: translate(2px, 2px);
+        }
+        25% {
+            transform: translate(-2px, -2px);
+        }
+        50% {
+            transform: translate(-2px, 2px);
+        }
+        75% {
+            transform: translate(2px, -2px);
+        }
+        100% {
+            transform: translate(2px, 2px);
+        }
+    }
 }
